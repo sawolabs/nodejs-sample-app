@@ -11,5 +11,5 @@ scanner(
       'sonar.language': 'js'
     }
   },
-  () => process.exit()
+  () => {}
 )
