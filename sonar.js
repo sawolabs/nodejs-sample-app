@@ -8,7 +8,7 @@ scanner(
       'sonar.projectName': 'TestProject',
       'sonar.projectDescription': 'Description for "My App" project...',
       'sonar.sources': '.',
-      'sonar.tests': 'test'
+      'sonar.language': 'js'
     }
   },
   () => process.exit()
