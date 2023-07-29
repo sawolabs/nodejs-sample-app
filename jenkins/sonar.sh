@@ -5,3 +5,4 @@ curl --create-dirs -sSLo $HOME/.sonar/sonar-scanner.zip https://binaries.sonarso
 unzip -o $HOME/.sonar/sonar-scanner.zip -d $HOME/.sonar/
 export PATH=$SONAR_SCANNER_HOME/bin:$PATH
 export SONAR_SCANNER_OPTS="-server"
+echo "sonar variables been set"
