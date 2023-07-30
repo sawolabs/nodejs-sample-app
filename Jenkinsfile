@@ -3,7 +3,7 @@ pipeline{
 
    environment {
      BRANCH_NAME = "${GIT_BRANCH.split("/")[1]}"
-  }
+   }
 
     stages {
         stage('Build') {
@@ -34,5 +34,9 @@ pipeline{
                 echo 'Deploying....'
             }
         }
+        stage('Report'){
+            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+        }
+            
     }
 }
