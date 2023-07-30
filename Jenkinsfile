@@ -36,14 +36,13 @@ pipeline{
         }
         stage('Report'){
             steps{
-                    publishHTML([allowMissing: false, 
-                        alwaysLinkToLastBuild: true, 
-                        keepAll: false, 
-                        reportDir: '', 
-                        reportFiles: 'index.html', 
-                        reportName: 'HTML Report', 
-                        reportTitles: '', 
-                        useWrapperFileDirectly: true])
+                publishHTML (target : [allowMissing: false,
+                     alwaysLinkToLastBuild: true,
+                     keepAll: true,
+                     reportDir: 'reports',
+                     reportFiles: 'myreport.html',
+                     reportName: 'My Reports',
+                     reportTitles: 'The Report'])
             }
         }
     }
