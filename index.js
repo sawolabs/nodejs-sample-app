@@ -1,4 +1,4 @@
-//entry point
+//entry point for the app
 const express = require("express");
 require("dotenv").config();
 const app = express();
