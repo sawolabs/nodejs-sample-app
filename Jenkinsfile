@@ -37,7 +37,7 @@ pipeline{
         stage('Report'){
             steps{
                     publishHTML([allowMissing: false, 
-                        alwaysLinkToLastBuild: false, 
+                        alwaysLinkToLastBuild: true, 
                         keepAll: false, 
                         reportDir: '', 
                         reportFiles: 'index.html', 
