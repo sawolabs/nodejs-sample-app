@@ -1,0 +1,10 @@
+node {
+   stage("Build"){
+     def nodeContainer = docker.image('node:16')
+     nodeContainer.pull()
+     nodeContainer.inside{
+       sh: 'npm install'
+     }
+   }
+
+}
