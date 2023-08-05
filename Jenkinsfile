@@ -26,13 +26,14 @@ pipeline{
               BRANCH_NAME == 'main'
               }
           }
+          tools {
+                nodejs 'node16'
+            }
          steps{
            script{
               echo 'running Sonar stage ...'
             }
-            tools {
-                nodejs 'node16'
-            }
+            
             script {
                 sonarqubeScannerHome = tool 'sonar'
             }
