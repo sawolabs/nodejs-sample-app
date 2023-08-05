@@ -13,6 +13,9 @@ pipeline{
             }
         }
         stage('Install') {
+            tools {
+                nodejs 'node16'
+            }
             steps {
                 npm 'install'
             }
