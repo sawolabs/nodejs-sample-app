@@ -2,21 +2,10 @@ pipeline{
     agent any
 
    environment {
-     BRANCH_NAME = "${GIT_BRANCH.split("origin/")[1]}"
+     BRANCH_NAME = "${GIT_BRANCH}"
    }
 
     stages {
-        // stage("environments"){
-        //     steps{
-        //         sh 'printenv'
-        //     }
-        // }
-        // stage('Build') {
-        //     steps {
-        //         echo BRANCH_NAME
-        //         git branch: BRANCH_NAME, url: 'https://github.com/ecomlisters/nodejsSample'
-        //     }
-        // }
         stage('Install') {
             tools {
                 nodejs 'node16'
@@ -34,7 +23,7 @@ pipeline{
           tools {
                 nodejs 'node16'
             }
-         steps{
+          steps{
            script{
               echo 'running Sonar stage ...'
             }
@@ -44,7 +33,6 @@ pipeline{
             withSonarQubeEnv('sonar') {
                 sh "${sonarqubeScannerHome}/bin/sonar-scanner -Dsonar.host.url=http://sonarqube:9000 -Dsonar.qualitygate.wait=true"
             }           
-         
           }
         }
         stage('Deploy') {
