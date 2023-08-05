@@ -17,7 +17,7 @@ pipeline{
                 nodejs 'node16'
             }
             steps {
-                sh: 'npm install'
+                sh 'npm install'
             }
         }
         stage('Sonar'){
