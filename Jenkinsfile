@@ -35,7 +35,7 @@ pipeline{
             // requires SonarQube Scanner 2.8+
             sonarqubeScannerHome = tool 'sonar'
             }
-            withSonarQubeEnv() {
+            withSonarQubeEnv('sonar') {
             sh "${sonarqubeScannerHome}/bin/sonar-scanner"
             }
             // withCredentials([string(credentialsId: 'sonar', variable: 'sonarLogin')]) {
