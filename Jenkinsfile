@@ -38,7 +38,7 @@ pipeline{
                 sonarqubeScannerHome = tool 'sonar'
             }
             withSonarQubeEnv('sonar') {
-                sh "${sonarqubeScannerHome}/bin/sonar-scanner -e -Dsonar.host.url=http://sonarqube:9000 -Dsonar.qualitygate.wait=true"
+                sh "${sonarqubeScannerHome}/bin/sonar-scanner -Dsonar.host.url=http://sonarqube:9000 -Dsonar.qualitygate.wait=true"
             }           
          
           }
